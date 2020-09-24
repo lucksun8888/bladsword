@@ -1,0 +1,38 @@
+select * from ptalk;
+alter table skill alter column att integer(4);
+alter table skill alter column flag rename to skill_flag;
+select * from role;
+select * from event;
+select * from skill where role_id = '002';
+select * from cuser;
+
+create table task(user_id varchar2(10) null,
+                  task_id varchar2(10) null,
+                  task_num varchar2(2) null,
+                  task_name varchar2(20) null,
+                  task_note varchar2(200) null,
+                  task_event_id varchar2(10) null,
+                  task_flag char(1) null);
+
+select * from ptask;
+
+select * from task;
+
+insert into task
+  (user_id,
+   task_id,
+   task_num,
+   task_name,
+   task_note,
+   task_event_id,
+   task_flag)
+values
+  (select 'lucksun' as user_id,
+          ptask_id,
+          ptask_num,
+          ptask_name,
+          ptask_note,
+          ptask_event_id,
+          '0' as task_flag
+     from ptask
+    where ptask_id = '0000000001')

@@ -1,0 +1,4 @@
+导出数据到csv文件：call CSVWRITE('D:/MyCSV.csv','select * from ptalk');
+导入数据到数据库：create table test as select * from csvread('D:/MyCSV.csv');
+h2数据库备份位置：C:\Documents and Settings\user
+导入csv文件：insert into cityparam (select * from csvread(''));

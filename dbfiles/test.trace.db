@@ -1,0 +1,65 @@
+04-19 10:40:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CEATE[*] TABLE TEST(
+ID VARCHAR2(20),
+VALUE1 VARCHAR2(20),
+VALUE2 VARCHAR2(20),
+VALUE3 VARCHAR2(20),
+ADD CONSTRAINT PK_TEST PRIMARY KEY (ID )
+) "; expected "COMMIT, CREATE, CALL, CHECKPOINT, COMMENT, {"; SQL statement:
+ceate table test(
+id varchar2(20),
+value1 varchar2(20),
+value2 varchar2(20),
+value3 varchar2(20),
+add constraint PK_test primary key (id )
+) [42001-176]
+04-19 10:40:52 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CEATE[*] TABLE TEST(
+ID VARCHAR2(20),
+VALUE1 VARCHAR2(20),
+VALUE2 VARCHAR2(20),
+VALUE3 VARCHAR2(20),
+ADD CONSTRAINT PK_TEST PRIMARY KEY (ID )
+) "; expected "COMMIT, CREATE, CALL, CHECKPOINT, COMMENT, {"; SQL statement:
+ceate table test(
+id varchar2(20),
+value1 varchar2(20),
+value2 varchar2(20),
+value3 varchar2(20),
+add constraint PK_test primary key (id )
+) [42001-176]
+04-19 10:41:34 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Unknown data type: "CONSTRAINT"; SQL statement:
+create table test(
+id varchar2(20),
+value1 varchar2(20),
+value2 varchar2(20),
+value3 varchar2(20),
+add constraint PK_test primary key (id )
+) [50004-176]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:344)
+	at org.h2.message.DbException.get(DbException.java:178)
+	at org.h2.message.DbException.get(DbException.java:154)
+	at org.h2.command.Parser.parseColumnWithType(Parser.java:3963)
+	at org.h2.command.Parser.parseColumnForTable(Parser.java:3826)
+	at org.h2.command.Parser.parseCreateTable(Parser.java:5723)
+	at org.h2.command.Parser.parseCreate(Parser.java:4122)
+	at org.h2.command.Parser.parsePrepared(Parser.java:351)
+	at org.h2.command.Parser.parse(Parser.java:306)
+	at org.h2.command.Parser.parse(Parser.java:278)
+	at org.h2.command.Parser.prepareCommand(Parser.java:243)
+	at org.h2.engine.Session.prepareLocal(Session.java:442)
+	at org.h2.engine.Session.prepareCommand(Session.java:384)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1188)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:172)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:160)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1391)
+	at org.h2.server.web.WebApp.query(WebApp.java:1064)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1026)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1013)
+	at org.h2.server.web.WebThread.process(WebThread.java:168)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Thread.java:619)
+04-19 10:44:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO "; expected "identifier"; SQL statement:
+insert into [42001-176]
